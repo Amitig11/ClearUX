@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ClearUX Popup</title>
+  <style>
+    body { width: 330px; margin: 0; font-family: Arial, Helvetica, sans-serif; color: #17211d; background: #f7fbf9; }
+    .wrap { padding: 16px; }
+    .head { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+    img { width: 38px; height: 38px; }
+    h1 { font-size: 19px; margin: 0; }
+    p { line-height: 1.4; }
+    select, button { width: 100%; padding: 10px; border-radius: 10px; margin: 7px 0; font: inherit; }
+    button { background: #165c43; color: white; border: 0; font-weight: bold; }
+    .result { border: 2px solid #dce8e2; border-radius: 14px; padding: 12px; margin-top: 12px; background: white; }
+    .high-warning { background: #fff0f0; border-color: #ce4b4b; }
+    .medium-warning { background: #fff5d7; border-color: #d9a928; }
+    .safe { background: #edf8f1; border-color: #2f8a56; }
+    .confidence { font-size: 28px; font-weight: 800; margin: 8px 0; }
+    .small { color: #5d6b64; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <img src="../assets/clearux-icon.svg" alt="ClearUX icon" />
+      <div><h1>ClearUX</h1><span class="small">Extension popup demo</span></div>
+    </div>
+    <label for="scenario">Scenario</label>
+    <select id="scenario">
+      <option value="clearDarkPattern">TC-01 Clear dark pattern</option>
+      <option value="edgeCase">TC-02 Edge case</option>
+      <option value="safePage">TC-03 Safe page</option>
+    </select>
+    <button id="scan">Scan Current Page</button>
+    <div id="result" class="result"><strong>No scan yet</strong><p>Select a scenario and scan.</p></div>
+    <p class="small">This popup uses the same measurable detection logic as the hosted web MVP.</p>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
