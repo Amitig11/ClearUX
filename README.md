@@ -103,13 +103,6 @@ The automated tests check:
 2. TC-02 returns a medium warning.
 3. TC-03 returns no warning.
 
-## What to submit on Canvas
-Submit these items:
-
-1. **Figma high-fidelity prototype URL**
-2. **Public GitHub repository link** containing this project
-3. **Hosted app link** or **recorded demo link**
-4. **Testing/access notes** from the `docs/` folder
 
 ## Testing notes for the professor
 To test the app manually:
