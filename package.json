@@ -1,0 +1,21 @@
+{
+  "name": "clearux-usable-product",
+  "version": "1.0.0",
+  "description": "ClearUX usable product MVP with quantified dark-pattern detection and automated unit tests.",
+  "type": "module",
+  "scripts": {
+    "start": "npx http-server . -p 8080",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "clearux",
+    "dark-patterns",
+    "software-engineering",
+    "unit-tests"
+  ],
+  "author": "ClearUX Team",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

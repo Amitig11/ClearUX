@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearUX — Usable Product MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/clearux-icon.svg" alt="ClearUX icon" class="logo" />
+      <div>
+        <h1>ClearUX</h1>
+        <p>Usable Product MVP — Dark Pattern Detection</p>
+      </div>
+    </div>
+    <span class="badge">Local analysis • No data collection</span>
+  </header>
+
+  <main class="layout">
+    <section class="card intro">
+      <h2>What we implemented</h2>
+      <p>
+        This working MVP checks one pattern: <strong>Exit-Flow Asymmetry</strong>. This means the website makes cancellation harder than subscribing or staying subscribed.
+      </p>
+      <p>
+        To avoid vague testing, we used exact measurable values: number of steps, button position, text size, button area, contrast ratio, and confidence score.
+      </p>
+      <div class="rule-grid">
+        <div><strong>Strong warning</strong><span>Ratio ≥ 2:1 and confidence ≥ 80%</span></div>
+        <div><strong>Medium warning</strong><span>Confidence 50%–79%</span></div>
+        <div><strong>No warning</strong><span>No subscription/cancellation flow found</span></div>
+      </div>
+    </section>
+
+    <section class="card controls">
+      <h2>Choose a webpage scenario</h2>
+      <label for="scenarioSelect">Scenario</label>
+      <select id="scenarioSelect">
+        <option value="clearDarkPattern">TC-01 Clear dark pattern</option>
+        <option value="edgeCase">TC-02 Edge case</option>
+        <option value="safePage">TC-03 Safe page</option>
+      </select>
+      <button id="scanBtn">Scan Current Page</button>
+      <p class="small-note">This simulates how our extension would scan a webpage using exact rules, not vague labels.</p>
+    </section>
+
+    <section class="demo-shell">
+      <div class="fake-browser">
+        <div class="browser-bar"><span></span><span></span><span></span><p id="fakeUrl">https://demo.clearux.local/manage-subscription</p></div>
+        <article id="pagePreview" class="page-preview"></article>
+      </div>
+
+      <aside class="extension-popup" aria-live="polite">
+        <div class="popup-header">
+          <img src="assets/clearux-icon.svg" alt="" />
+          <div>
+            <h3>ClearUX Scan</h3>
+            <p id="scanState">Ready to scan</p>
+          </div>
+        </div>
+        <div id="resultBox" class="result neutral">
+          <strong>No scan yet</strong>
+          <p>Select a scenario and click Scan Current Page.</p>
+        </div>
+        <dl id="evidenceList" class="evidence"></dl>
+        <div class="feedback">
+          <p>Was this result helpful?</p>
+          <button id="helpfulYes">Yes</button>
+          <button id="helpfulNo">No</button>
+        </div>
+        <p id="feedbackMsg" class="feedback-msg"></p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>ClearUX Team — Nissrine Belghiti, Sara El-loussi, Hanna Sayed Ahmed, Abdoul Madjid Issoufou</p>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
